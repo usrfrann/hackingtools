@@ -4,15 +4,15 @@
 
 
 
-echo Hiya!!!!!!!You are feeling naughty arent ya?
+echo Hello 
 echo Configureing wifi and removing processes that might such
 airmon-ng check | grep [0-9] > killPStemp.txt
-echo removing these guys!
+echo removing these extra processes!
 cat killPStemp.txt
 grep -v "Found" killPStemp.txt > killPS.txt
 kill $(gawk '{print $1}' killPS.txt)
 rm killPStemp.txt killPS.txt
-echo everything is gone now sorry if that was something important
+echo all the processes is gone now sorry if that was something important
 sleep 3
 
 #airodump-ng --write netList --output-format csv wlan0
@@ -66,7 +66,7 @@ done
 
 echo Again Enter the number of the network you wish to destory...
 echo You can also enter "'target'" and the network number to target a device on network
-echo Please Dont go Nucular you never know what someon
+echo Please Dont go Nucular you never know what someone is doing on the wifi
 		sleep 60
 		kill -TERM $PID2
 		gawk '{print $1}' clientList-01.csv > netListClient.txt
@@ -77,8 +77,7 @@ echo Please Dont go Nucular you never know what someon
 		COUNT=0
 		while [ $COUNT -lt $CLTNUM ]; do
 			e is using on the internet 
-echo But I had to put the option because its there right
-echo SO enter "'Nuke'" to know disconnect all devices connected to wifi in range of network card
+echo SO enter "'Nuke'" to disconnect all devices in range of network card from wifi
 echo "" 
 echo list of commands "are '#', 'target', 'Nuke'"
 echo enter ctrl+c to break out of the loops but also kill ps after!
@@ -89,18 +88,11 @@ p=p
 	if [ "$deadMacAddress" = "Nuke" ]; then
 		echo Wow I cant beleieve you enetered tha
 		echo Please think about it and wait 30 seconds
-		echo Think about someone on a skype call with a solder overseas 
 		sleep 5
-		echo think about if someone has a disabi
-		echo Wow I cant beleieve you enetered tha
+		echo Wow I cant beleieve you enetered that
 		echo Please think about it and wait 30 seconds
-		echo Think about someone on a skype call with a solder overseas 
-		sleep 5
 		echo think about if someone has a disability 
-		sleep 25
-		echo YOU REALLY ARE A BAD PERSON!
-       		echo Just so you know they are background processes and how to stop them... 	
-		sleep 2
+		sleep 25	
 		COUNTER=0
 		while [ $COUNTER -lt $NETNUM ]; do
 			echo "#"$COUNTER":"
@@ -135,7 +127,6 @@ p=p
                 echo Pick the Client/Station you want to take down!
 		COUNT=0
 		while [ $COUNT -lt $CLTNUM ]; do
-			
 		gawk '{print $1}' clientList-01.csv > netL
 		sleep 60
 		kill -TERM $PID2
@@ -184,7 +175,6 @@ p=p
 			sleep 5
 			echo NYAN  waiting before attacking "$CLTADD" again NYAN 
 		done
-
 	else 
 		echo changing to the channel of the network you are targeting 
 		#iwconfig wlan0 channel | sed -n $deadMacAddress$p noNetListChannel.txt
@@ -197,10 +187,7 @@ p=p
 	iwconfig wlan0 mode monitor 
 	ifconfig wlan0 up 
 	iwconfig wlan0 | grep Mode 
-	sleep 3
-	echo Waiting!!!!NYAN NYAN 	
+	sleep 3	
 done
-
 rm netList-01.csv
 rm clientList-o1.csv
-
