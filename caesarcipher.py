@@ -20,6 +20,7 @@ for symbol in message:
             translatedIndex = symbolIndex - key
 
         #Handle wraparound, if needed
+        #range(len(SYMBOLS)):
         if translatedIndex >= len(SYMBOLS):
             translatedIndex = translatedIndex - len(SYMBOLS)
         elif translatedIndex < 0:
