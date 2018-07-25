@@ -1,13 +1,4 @@
-#-------------------------------------------------------------------------------
-# Name:        module1
-# Purpose:
-#
-# Author:      Living_computer
-#
-# Created:     24/07/2018
-# Copyright:   (c) Living_computer 2018
-# Licence:     <your licence>
-#-------------------------------------------------------------------------------
+#Testfile for testing the Transposition Cipher
 
 import random,transpositionEncrypt,transpositionDecryption
 
