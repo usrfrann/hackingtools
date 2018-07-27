@@ -6,3 +6,5 @@
 2. WIFI detector and jammer scrypt with text editor
 3. Caesar Cipher Encryption and Decryption using a text based string(Limited doesn't expand to file Input Output)(simple encryption)
 4. Transposition Cipher Encryption and Decryption but accounts for file Input Output
+5. Added file for detecting English in text
+6. Transposition Cipher Break using brute force  
