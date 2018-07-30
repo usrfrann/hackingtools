@@ -9,3 +9,4 @@
 5. Added file for detecting English in text
 6. Transposition Cipher Break using brute force 
 7. Math Cryptotools like finding Greatest Common Denominator and Modular Inverse for Affine Cipher
+8. Added code to create the affine cipher 
