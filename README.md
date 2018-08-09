@@ -11,3 +11,4 @@
 7. Math Cryptotools like finding Greatest Common Denominator and Modular Inverse for Affine Cipher
 8. Added code to create the affine cipher
 9. Adding Vigenere Cipher Encryption and Decryption using a text based string(Limited doesn't expand to File Input and Output)
+10. Added a Letter Frequency Analysis to detect the most and least common used letter distrubutions in english
