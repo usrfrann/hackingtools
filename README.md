@@ -1,6 +1,6 @@
 #Security tools
 
-#Tools that I am creating to help grow with my security background.
+#Tools that I am creating to help grow with my security background. Credit goes to Al Sweigart for the art of explaining the math. 
 
 1. Mac Address Changer scrypt run in a bash Shell 
 2. WIFI detector and jammer scrypt with text editor
