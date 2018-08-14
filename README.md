@@ -12,4 +12,5 @@
 8. Added code to create the affine cipher
 9. Adding Vigenere Cipher Encryption and Decryption using a text based string(Limited doesn't expand to File Input and Output)
 10. Added a Letter Frequency Analysis to detect the most and least common used letter distrubutions in english
-11. Adding a Vigenere Dictionary Hacker to find key words through using a dictionary. It does not work for random strings of key 
+11. Adding a Vigenere Dictionary Hacker to find key words through using a dictionary. It does not work for random strings of key
+12. Added a Vigenere Hacker that uses Kasaski Examination Brute force is not super effiecent and can run out of memory
