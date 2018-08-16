@@ -14,3 +14,4 @@
 10. Added a Letter Frequency Analysis to detect the most and least common used letter distrubutions in english
 11. Adding a Vigenere Dictionary Hacker to find key words through using a dictionary. It does not work for random strings of key
 12. Added a Vigenere Hacker that uses Kasaski Examination Brute force is not super effiecent and can run out of memory
+13. Added Prime Number module which checks if a number is prime using trial division, Sieve of Eratosthenes, and Rabin-Miller Primality Algorithm. The module uses these algorithms to generate large prime numbers.
