@@ -15,4 +15,5 @@
 11. Adding a Vigenere Dictionary Hacker to find key words through using a dictionary. It does not work for random strings of key
 12. Added a Vigenere Hacker that uses Kasaski Examination Brute force is not super effiecent and can run out of memory
 13. Added Prime Number module which checks if a number is prime using trial division, Sieve of Eratosthenes, and Rabin-Miller Primality Algorithm. The module uses these algorithms to generate large prime numbers.
-14. Generating public and private Keys files for the public RSA cipher 
+14. Generating public and private Keys files for the public RSA cipher
+15. publicKeyCipher only encrypts and does not decrypt which I believe is a good thing because when using public RSA the math should be a little harder. So the code only really explains the concept of encrypting using public and private key files in order to convert a message into a very large relatively prime number. 
