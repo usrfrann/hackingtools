@@ -3,7 +3,6 @@
 #TO-DO MAke the file management and file creation and rm collector so only files are created and overwritten 
 
 
-
 echo Hello 
 echo Configureing wifi and removing processes that might such
 airmon-ng check | grep [0-9] > killPStemp.txt
@@ -33,8 +32,6 @@ kill -TERM $PID
 		COUNT=0
 		while [ $COUNT -lt $CLTNUM ]; do
 			
-#figure out how to send a contine 
-#Thinking a while loop with a timer in it if worse comes to worse 
 
 #macaddress
 gawk '{print $1}' netList-01.csv > netListBSSID.txt
